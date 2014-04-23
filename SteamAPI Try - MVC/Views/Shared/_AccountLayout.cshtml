@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Styles/Style.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @{
+        var username = ViewData["Name"];
+        var avatar = ViewData["MedAvatar"];
+        var realname = ViewData["realname"];
+    }
+    <h2>Home Page</h2>
+    <img src="@avatar" />
+    <p>Welcome @username</p>
+    <div>
+        @Html.ActionLink("Profile", "Settings")
+        @Html.ActionLink("Lounge", "Account")
+        @Html.ActionLink("Casino", "Account")
+        @Html.ActionLink("Sales", "Account")
+        @Html.ActionLink("Credits", "Account")
+        @Html.ActionLink("News", "Account")
+    </div>
+
+    @RenderBody()
+
+    @Scripts.Render("~/bundles/jquery")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
