@@ -23,7 +23,7 @@ namespace SteamAPI_Try___MVC.Controllers
         private void SteamID()
         {
             //76561198131281243
-            SteamWebAPI.SetGlobalKey("CFDCF16D4EC9D68762FBE9C61B43892D");
+            SteamWebAPI.SetGlobalKey("");
             
             var user = User.Identity.Name;
             long id = Convert.ToInt64(user);
@@ -36,7 +36,7 @@ namespace SteamAPI_Try___MVC.Controllers
         
         private void JsonUserData()
         {
-            string url = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=CFDCF16D4EC9D68762FBE9C61B43892D&steamids=76561198131281243";
+            string url = "http://api.steampowered.com/ISteamUser/GetPlayerSummaries/v0002/?key=&steamids=76561198131281243";
             WebClient c = new WebClient();
             var data = c.DownloadString(url);
             JObject o = JObject.Parse(data);
